@@ -1,0 +1,624 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Kuchu Puchuu 💗</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  font-family:"Segoe UI",sans-serif;
+  background:#fff7fb;color:#572b42;line-height:1.7;
+}
+nav{
+  position:sticky;top:0;z-index:20;
+  background:#fff9fceF;backdrop-filter:blur(12px);
+  padding:14px 5%;display:flex;justify-content:space-between;
+  align-items:center;gap:12px;box-shadow:0 3px 15px #a6426a12;
+}
+.logo{color:#d64781;font-size:19px;font-weight:800;text-decoration:none}
+.links{display:flex;gap:15px;flex-wrap:wrap;justify-content:center}
+.links a{text-decoration:none;color:#70445a;font-size:13px;font-weight:600}
+.links a:hover{color:#d64781}
+section{padding:75px 7%;text-align:center;scroll-margin-top:65px}
+.hero{
+  min-height:90vh;display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  background:linear-gradient(140deg,#ffe0ed,#fff7fb,#eee3ff);
+  position:relative;overflow:hidden;padding:70px 20px;
+}
+.tag{font-size:12px;letter-spacing:3px;font-weight:800;color:#d64781}
+h1{font-size:clamp(36px,7vw,65px);line-height:1.15;margin:18px 0}
+h2{font-size:clamp(27px,4vw,39px);margin:8px 0 14px}
+h3{margin:10px 0}
+p{margin-bottom:12px}
+.sub{max-width:620px;margin:0 auto 25px;color:#805a70}
+.btn{
+  display:inline-block;border:0;border-radius:30px;
+  padding:13px 24px;background:linear-gradient(120deg,#ed77a5,#d34480);
+  color:white;font-size:15px;font-weight:700;text-decoration:none;
+  cursor:pointer;margin:7px;box-shadow:0 8px 22px #d3448025;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn:disabled{opacity:.7;cursor:default}
+.emoji{font-size:48px;margin:10px}
+.heart-float{position:absolute;animation:float 4s infinite ease-in-out}
+.h1{top:12%;left:9%;font-size:32px}
+.h2{right:9%;bottom:14%;font-size:42px;animation-delay:1s}
+@keyframes float{50%{transform:translateY(-20px) rotate(10deg)}}
+.grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;max-width:1100px;margin:30px auto 0;
+}
+.card{
+  background:white;padding:13px;border-radius:20px;
+  box-shadow:0 8px 25px #67213b12;cursor:pointer;
+  transition:.25s;overflow:hidden;
+}
+.card:hover{transform:translateY(-6px)}
+.card img,
+.memory-video{
+  display:block;width:100%;height:220px;object-fit:cover;
+  border-radius:14px;background:#ffe4ef;
+}
+.memory-video{background:#000}
+.card p{color:#93667c;font-size:14px;margin-bottom:8px}
+.card h3{font-size:17px}
+.message-card{
+  background:white;padding:23px;border-radius:18px;
+  box-shadow:0 6px 22px #67213b0e;cursor:pointer;
+}
+.message-card .answer{display:none;color:#c83f79;margin-top:12px}
+.message-card.open .answer{display:block;animation:fade .4s}
+.letter{
+  max-width:650px;margin:25px auto 0;background:white;
+  border:1px solid #f7d4e2;border-radius:20px;padding:30px;
+  text-align:left;box-shadow:0 10px 30px #67213b12;
+}
+.soft{background:#ffedf5}
+.lavender{background:#f3edff}
+.pink{background:#fff1f6}
+.surprise{
+  display:none;max-width:600px;margin:25px auto 0;padding:25px;
+  background:white;border-radius:20px;box-shadow:0 10px 35px #67213b15;
+}
+.surprise.show{display:block;animation:fade .6s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.big-heart{font-size:65px;animation:beat 1s infinite}
+@keyframes beat{50%{transform:scale(1.15)}}
+.song-box{
+  position:relative;max-width:600px;margin:25px auto;padding:28px 28px 22px;
+  background:linear-gradient(135deg,#fffdfd,#fff1f7 40%,#f4ecff);
+  border:1px solid #f2d4e4;border-radius:26px;
+  box-shadow:0 16px 36px #67213b124;overflow:hidden;
+}
+.song-box::before,
+.song-box::after{
+  content:"";position:absolute;border-radius:50%;pointer-events:none
+}
+.song-box::before{
+  width:170px;height:170px;right:-48px;top:-52px;
+  background:rgba(246,120,167,.12)
+}
+.song-box::after{
+  width:130px;height:130px;left:-32px;bottom:-42px;
+  background:rgba(182,142,255,.12)
+}
+.song-box .mini-tag{
+  position:relative;display:inline-block;padding:7px 14px;border-radius:999px;
+  background:linear-gradient(120deg,#ffd8eb,#ffeaf4);color:#c53f78;
+  font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:12px;box-shadow:0 6px 14px rgba(214,71,129,.12)
+}
+.song-box h3{position:relative;margin:6px 0 8px;line-height:1.2}
+audio{width:100%;margin-top:15px;accent-color:#d64781;border-radius:12px}
+.audio-wrap{position:relative;margin-top:10px}
+.note-caption{position:relative;font-size:13px;color:#93667c;margin-top:12px}
+.bday-banner{
+  position:relative;margin:0 0 14px;padding:12px 14px;border-radius:16px;
+  background:linear-gradient(120deg,#fff7b9,#ffe5f0,#f6eaff);
+  border:1px solid #f7d6eb;color:#7a4a5e;font-weight:700;
+  box-shadow:0 8px 18px rgba(196,104,155,.08)
+}
+.modal{
+  position:fixed;inset:0;z-index:50;background:#260f20eF;
+  display:flex;align-items:center;justify-content:center;padding:20px;
+}
+.modal[hidden]{display:none}
+.modal-box{
+  width:min(100%,500px);max-height:90vh;overflow:auto;
+  background:white;padding:18px;border-radius:20px;text-align:center;
+}
+.modal-box img{width:100%;max-height:55vh;object-fit:contain;border-radius:12px}
+.close{float:right;border:0;background:white;color:#ce3d79;font-size:28px;cursor:pointer}
+footer{padding:30px 15px;text-align:center;background:#49263a;color:white}
+footer p{margin:5px 0}
+@media(max-width:760px){
+ nav{flex-direction:column}
+ .links{gap:10px}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ .card img{height:170px}
+ section{padding:60px 5%}
+}
+@media(max-width:450px){
+ .grid{grid-template-columns:1fr}
+ .card img{height:250px}
+ .letter{padding:22px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a class="logo" href="#home">For My Kuchu Puchuu 💗</a>
+  <div class="links">
+    <a href="#senior">Senior</a>
+    <a href="#my-love">My Love</a>
+    <a href="#memories">Photos</a>
+    <a href="#letter">Letter</a>
+    <a href="#surprise">Surprise</a>
+  </div>
+</nav>
+
+<!-- STEP 1: HOME -->
+<section class="hero" id="home">
+  <span class="heart-float h1">💗</span>
+  <span class="heart-float h2">💕</span>
+  <p class="tag">A LITTLE WEBSITE, A LOT OF LOVE</p>
+  <div class="emoji">🧸💖</div>
+  <h1>Hey, Meri Kuchu Puchuu! 🥹</h1>
+  <p class="sub">
+    Welcome to our little world, My Love.
+    I made this special place just for you.
+    Every click has a little surprise waiting for you. 💌
+  </p>
+  <a href="#senior" class="btn">Come Inside, Senior 💗</a>
+</section>
+
+<!-- STEP 2: SENIOR -->
+<section id="senior" class="soft">
+  <p class="tag">MY SPECIAL SENIOR 🎓</p>
+  <h2>Senior Ho Aap Meri 💕</h2>
+  <p class="sub">
+    Meri cute si Senior, aapke liye ek chhota sa corner.
+    Senior bolun, My Love bolun, ya meri Kuchu Puchuu? 🥹
+  </p>
+
+  <!-- PHOTO 1: images/senior.jpg -->
+  <div class="grid" style="max-width:400px">
+    <div class="card photo-card"
+      data-img="images/senior.jpg"
+      data-title="My Favorite Senior 🎓"
+      data-msg="Senior ji, aap bahut special ho mere liye. 💗">
+      <img src="images/senior.jpg" alt="My Senior">
+      <h3>My Senior 🎓</h3>
+      <p>Click to see your photo 💗</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 3: MY LOVE -->
+<section id="my-love">
+  <p class="tag">MY PERSON, MY HAPPINESS</p>
+  <h2>My Love, My Everything ❤️</h2>
+  <p class="sub">
+    Duniya ke liye aap Muskan ho,
+    par mere liye aap meri favorite feeling ho. 🫶
+  </p>
+
+  <!-- PHOTO 2: images/my-love.jpg -->
+  <div class="grid" style="max-width:400px">
+    <div class="card photo-card"
+      data-img="images/my-love.jpg"
+      data-title="My Love ❤️"
+      data-msg="Aapki smile meri favorite hai. Always keep smiling!">
+      <img src="images/my-love.jpg" alt="My Love">
+      <h3>My Love ❤️</h3>
+      <p>One special picture of you</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 4: HER SMILE -->
+<section class="pink" id="smile">
+  <p class="tag">YOUR SMILE IS MAGIC 🌸</p>
+  <h2>Meri Pyaari Si Muskan 😊</h2>
+  <p class="sub">
+    Aapki smile dekh kar mera din better ho jaata hai.
+    Isliye smile karte rehna, meri Puchuu. 💕
+  </p>
+
+  <!-- PHOTO 3: images/smile.jpg -->
+  <div class="grid" style="max-width:400px">
+    <div class="card photo-card"
+      data-img="images/smile.jpg"
+      data-title="That Beautiful Smile 😊"
+      data-msg="Never hide that beautiful smile, Kuchu Puchuu!">
+      <img src="images/smile.jpg" alt="Muskan smiling">
+      <h3>Your Beautiful Smile 🌷</h3>
+      <p>Tap to open</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 5: MEMORIES -->
+<section id="memories" class="lavender">
+  <p class="tag">LITTLE MOMENTS, BIG FEELINGS</p>
+  <h2>Our Memories 📸</h2>
+  <p class="sub">
+    Add your favorite pictures here. Har photo ke saath
+    ek special message bhi hai.
+  </p>
+
+  <div class="grid">
+    <!-- PHOTO 4: images/memory1.jpg -->
+    <div class="card photo-card"
+      data-img="images/memory1.jpg"
+      data-title="Our Favorite Picture 🫶"
+      data-msg="A little picture, a beautiful feeling. ❤️">
+      <img src="images/memory1.jpg" alt="Our favorite picture">
+      <h3>Our Favorite Picture 🫶</h3>
+      <p>Click to open</p>
+    </div>
+
+    <!-- PHOTO 5: special memory video -->
+    <div class="card photo-card"
+      data-video="mylove.mp4"
+      data-title="A Special Memory ✨"
+      data-msg="Some moments become special because of the person in them.">
+      <video class="memory-video" muted loop playsinline autoplay preload="auto" aria-label="A special memory video">
+        <source src="mylove.mp4" type="video/mp4">
+      </video>
+      <h3>A Special Memory ✨</h3>
+      <p>Click to play the video</p>
+    </div>
+
+    <!-- PHOTO 6: images/memory3.jpg -->
+    <div class="card photo-card"
+      data-img="images/memory3.jpg"
+      data-title="My Favorite Us Photo 💗"
+      data-msg="One more memory to keep close to my heart.">
+      <img src="images/memory3.jpg" alt="Our memory">
+      <h3>My Favorite Us Photo 💗</h3>
+      <p>Click to open</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 6: REASONS I LOVE YOU -->
+<section id="reasons">
+  <p class="tag">A FEW THINGS I ADORE</p>
+  <h2>Reasons I Love You 💌</h2>
+  <p class="sub">Click each card, meri Kuchu Puchuu. 🥹</p>
+
+  <div class="grid">
+    <div class="message-card">
+      <h3>01. Your Smile 😊</h3>
+      <p>Tap to reveal 💗</p>
+      <div class="answer">It makes even my ordinary days feel beautiful.</div>
+    </div>
+
+    <div class="message-card">
+      <h3>02. Your Nature 🌷</h3>
+      <p>Tap to reveal 💗</p>
+      <div class="answer">There is something special about the way you are.</div>
+    </div>
+
+    <div class="message-card">
+      <h3>03. Your Cute Side 🧸</h3>
+      <p>Tap to reveal 💗</p>
+      <div class="answer">Meri Kuchu Puchuu, your cute little moments are precious.</div>
+    </div>
+
+    <div class="message-card">
+      <h3>04. Our Talks 💬</h3>
+      <p>Tap to reveal 💗</p>
+      <div class="answer">I love the little moments when we get to talk.</div>
+    </div>
+
+    <div class="message-card">
+      <h3>05. My Senior 🎓</h3>
+      <p>Tap to reveal 💗</p>
+      <div class="answer">Senior ji, you have your own special place in my heart.</div>
+    </div>
+
+    <div class="message-card">
+      <h3>06. Simply You ❤️</h3>
+      <p>Tap to reveal 💗</p>
+      <div class="answer">Not because you are perfect, but because you are you.</div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 7: LOVE LETTER -->
+<section id="letter" class="soft">
+  <p class="tag">WORDS FROM MY HEART</p>
+  <h2>For You, My Love 💌</h2>
+
+  <div class="letter">
+    <div class="emoji" style="text-align:center">💌</div>
+    <h3>Dear Meri Kuchu Puchuu, ❤️</h3>
+    <p>
+      Pata hai, Muskan? I wanted to make something
+      special for you, something that could make you
+      smile whenever you open it.
+    </p>
+    <p>
+      You are my favorite person to think about,
+      my favorite smile to remember, and my favorite
+      reason to feel happy.
+    </p>
+    <p>
+      Senior ji, aap hamesha khush rehna.
+      Jab bhi aap ye website kholo, I hope it reminds
+      you that someone made this little world just for you.
+    </p>
+    <p>
+      I might not always find the perfect words,
+      but I hope my little efforts make you feel special.
+    </p>
+    <h3>Lots of love, My Love. 💗</h3>
+    <p>Forever your favorite person in this little corner. 🫶</p>
+  </div>
+</section>
+
+<!-- STEP 8: WHEN YOU MISS ME -->
+<section id="miss-me" class="lavender">
+  <p class="tag">OPEN THIS WHENEVER YOU NEED IT</p>
+  <h2>When You Miss Me 🥹</h2>
+  <p class="sub">Choose what your heart needs right now.</p>
+
+  <div>
+    <button class="btn comfort" data-message="Sending you the biggest virtual hug, meri Puchuu! 🤗💗">
+      Need a Hug? 🤗
+    </button>
+    <button class="btn comfort" data-message="It's okay to have a difficult day. Take a breath, rest a little, and be kind to yourself. ❤️">
+      Feeling Sad? 🥺
+    </button>
+    <button class="btn comfort" data-message="Official order from your favorite person: one big smile, right now! 😊💕">
+      Need a Smile? 😊
+    </button>
+    <button class="btn comfort" data-message="Reminder: you matter, your feelings matter, and you deserve kindness. My lovely Senior. 🌷">
+      Need a Reminder? 🌷
+    </button>
+  </div>
+
+  <div id="comfortMessage" class="surprise" aria-live="polite"></div>
+</section>
+
+<!-- STEP 9: SECRET SURPRISE -->
+<section id="surprise" class="pink">
+  <p class="tag">A LITTLE GIFT FOR YOU</p>
+  <h2>Open Your Little Surprise 🎁</h2>
+  <div class="emoji">🎁💗🎀</div>
+  <p class="sub">Meri Kuchu Puchuu, this one's especially for you!</p>
+
+  <button id="giftBtn" class="btn">Open My Gift 💝</button>
+
+  <div id="giftMessage" class="surprise" aria-live="polite">
+    <div class="big-heart">❤️</div>
+    <h3>Surprise, My Love!</h3>
+    <p>
+      Muskan, I hope this little gift makes you smile.
+      You deserve beautiful moments, lots of happiness,
+      and people who appreciate you for who you are. 🥹💕
+    </p>
+    <p>Lots and lots of love for you, Senior ji! 🫶</p>
+
+    <!-- OPTIONAL PHOTO 7: images/surprise.jpg -->
+    <img src="images/surprise.jpg" alt="Your surprise picture"
+      style="width:100%;max-width:320px;border-radius:16px;margin-top:12px">
+  </div>
+</section>
+
+<!-- STEP 10: OUR SONG -->
+<section id="song">
+  <p class="tag">A SONG THAT REMINDS ME OF YOU</p>
+  <h2>Happy Birthday, My Love 🎉</h2>
+  <div class="song-box">
+    <div class="emoji">🎧💕🎂</div>
+    <span class="mini-tag">Your birthday note</span>
+    <div class="bday-banner">Happy Birthday, meri pyaari Muskan! May your day be full of smiles, laughter, and all the love you deserve. 🎉💗</div>
+    <h3>Just for My Love</h3>
+    <p class="sub">A little note from my heart, made only for you today and always.</p>
+
+    <div class="audio-wrap">
+      <audio id="loveNote" controls preload="metadata" aria-label="Audio note for my love">
+        <source src="note.ogg" type="audio/ogg">
+        <source src="note.wav" type="audio/wav">
+        Your browser does not support audio.
+      </audio>
+    </div>
+
+    <p class="note-caption">
+      A tiny note from my heart, made only for you. Wishing you endless happiness, peace, and my love every single day. ❤️
+    </p>
+  </div>
+</section>
+
+<!-- STEP 11: LITTLE DREAMS -->
+<section id="future" class="lavender">
+  <p class="tag">SOMEDAY, SOMEWHERE</p>
+  <h2>Our Little Dreams 🌙</h2>
+  <p class="sub">Little dreams, beautiful possibilities.</p>
+
+  <div class="grid">
+    <div class="message-card">
+      <h3>🌍 Places to See</h3>
+      <p>Places we would love to explore together.</p>
+    </div>
+    <div class="message-card">
+      <h3>📸 More Memories</h3>
+      <p>More pictures, more laughs, more little moments.</p>
+    </div>
+    <div class="message-card">
+      <h3>🌷 Little Happiness</h3>
+      <p>Making time for the small things that make us smile.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 12: FINAL HUG -->
+<section id="final-hug" class="hero">
+  <p class="tag">ONE LAST THING, MY LOVE</p>
+  <div class="big-heart">🫶</div>
+  <h2>Come Here, Meri Kuchu Puchuu!</h2>
+  <p class="sub">
+    Imagine the biggest, warmest virtual hug right now. 🤗
+    Thank you for being you, Muskan.
+  </p>
+  <button class="btn" id="hugBtn">Send Me a Hug Back 💗</button>
+  <p id="hugMessage" aria-live="polite"></p>
+  <a href="#home" class="btn">Back to Our Little World 🏠</a>
+</section>
+
+<footer>
+  <h3>Made with love for Muskan ❤️</h3>
+  <p>For my Senior, my Love, my Kuchu Puchuu. 🥹</p>
+  <p>Our Little World © 2026</p>
+</footer>
+
+<!-- PHOTO POPUP -->
+<div class="modal" id="photoModal" hidden>
+  <div class="modal-box">
+    <button class="close" id="closeModal" aria-label="Close popup">×</button>
+    <img id="modalImage" src="" alt="Selected memory">
+    <video id="modalVideo" controls playsinline preload="auto" hidden style="width:100%;max-height:55vh;border-radius:12px;background:#000"></video>
+    <h3 id="modalTitle"></h3>
+    <p id="modalMessage"></p>
+  </div>
+</div>
+
+<script>
+const loveNote = document.getElementById("loveNote");
+if (loveNote) {
+  loveNote.addEventListener("error", () => {
+    loveNote.pause();
+    loveNote.src = "note.wav";
+    loveNote.load();
+  }, { once: true });
+}
+
+// PHOTO GALLERY: open the selected picture or video
+const modal = document.getElementById("photoModal");
+const modalImage = document.getElementById("modalImage");
+const modalVideo = document.getElementById("modalVideo");
+const modalTitle = document.getElementById("modalTitle");
+const modalMessage = document.getElementById("modalMessage");
+
+document.querySelectorAll(".photo-card").forEach(card => {
+  card.addEventListener("click", () => {
+    const videoUrl = card.dataset.video;
+    modalTitle.textContent = card.dataset.title;
+    modalMessage.textContent = card.dataset.msg;
+
+    if (videoUrl) {
+      modalImage.hidden = true;
+      modalVideo.hidden = false;
+      modalVideo.src = videoUrl;
+      modalVideo.load();
+      setTimeout(() => {
+        modalVideo.muted = false;
+        modalVideo.play().catch(() => {});
+      }, 200);
+    } else {
+      const img = card.querySelector("img");
+      modalImage.hidden = false;
+      modalVideo.hidden = true;
+      modalVideo.pause();
+      modalVideo.removeAttribute("src");
+      modalImage.src = img.src;
+      modalImage.alt = img.alt;
+    }
+
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    document.getElementById("closeModal").focus();
+  });
+});
+
+function closePhoto() {
+  modal.hidden = true;
+  modalImage.src = "";
+  modalImage.hidden = false;
+  modalVideo.pause();
+  modalVideo.removeAttribute("src");
+  modalVideo.hidden = true;
+  document.body.style.overflow = "";
+}
+
+document.getElementById("closeModal").addEventListener("click", closePhoto);
+
+modal.addEventListener("click", event => {
+  if (event.target === modal) closePhoto();
+});
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape" && !modal.hidden) closePhoto();
+});
+
+// REASONS: reveal each message when its card is clicked
+document.querySelectorAll(".message-card").forEach(card => {
+  card.addEventListener("click", () => {
+    card.classList.toggle("open");
+  });
+});
+
+// COMFORT BUTTONS
+const comfortMessage = document.getElementById("comfortMessage");
+
+document.querySelectorAll(".comfort").forEach(button => {
+  button.addEventListener("click", () => {
+    comfortMessage.textContent = button.dataset.message;
+    comfortMessage.classList.add("show");
+  });
+});
+
+// SURPRISE GIFT
+document.getElementById("giftBtn").addEventListener("click", () => {
+  const gift = document.getElementById("giftMessage");
+  gift.classList.add("show");
+  document.getElementById("giftBtn").textContent =
+    "Your Surprise Is Opened ❤️";
+  document.getElementById("giftBtn").disabled = true;
+});
+
+// FINAL HUG
+document.getElementById("hugBtn").addEventListener("click", () => {
+  document.getElementById("hugMessage").textContent =
+    "Yayyy! Virtual hug received! 🤗💗 Sending you one back, Senior ji!";
+});
+
+// IMAGE FALLBACK: show a pretty placeholder if a photo is missing
+document.querySelectorAll(".photo-card img").forEach(img => {
+  img.addEventListener("error", () => {
+    img.src = "data:image/svg+xml," + encodeURIComponent(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="400" height="300">
+        <rect width="100%" height="100%" fill="#ffe4ef"/>
+        <text x="50%" y="45%" text-anchor="middle" font-size="52">💗</text>
+        <text x="50%" y="65%" text-anchor="middle"
+          font-size="17" fill="#a43c6c">Add your photo here</text>
+      </svg>
+    `);
+    img.alt = "Photo placeholder";
+  }, { once: true });
+});
+
+// Handle optional surprise image if it is missing
+const surprisePhoto = document.querySelector("#giftMessage img");
+surprisePhoto.addEventListener("error", () => {
+  surprisePhoto.hidden = true;
+});
+</script>
+
+</body>
+</html>
